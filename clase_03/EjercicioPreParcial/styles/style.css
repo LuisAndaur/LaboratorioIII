@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:wght@100;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", "sans serif";
+}
+h1{
+    color: #0d2455;
+    margin: 10px 30px;
+}
+
+input.cargar {
+    background-color: #dde0ea;
+    color: rgb(43, 82, 160);
+    margin: 10px 30px;
+    padding: 8px 26px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+input.cargar:hover {
+    background-color: rgb(165, 174, 205);
+}
+
+select {
+    background-color: #eeeff3;
+    color: rgb(43, 82, 160);
+    margin: 10px 30px;
+    padding: 8px 26px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+select:hover {
+    background-color: #cdd5f2;
+}
+
+div#contenedor{
+    margin: 10px 30px;
+}
+
+table {
+    width: 60%;
+    text-align: center;
+    border-collapse: collapse;    
+}
+
+/* th{
+    width: 96%;
+    padding: 8px;
+    font-size: 12px;
+} */
+
+td {
+    padding: 8px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border: 4px solid #fff; 
+    font-size: 12px;
+}
+
+tr:hover td {
+    background: #d0dafd;
+    color: #339; 
+    border: 4px solid #fff;
+    font-size: 12px;
+}
+
+input.button {
+    width: 96%;
+    background-color: #b9c9fe;
+    color: #039;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 8px 8px;
+}
+
+input.button:hover {
+    background-color: #a1b1e6;
+}

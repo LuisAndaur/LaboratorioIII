@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./js/script.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Practica</title>
+</head>
+<body>
+    <h1>Lista de Vehiculos</h1>
+    <input class="cargar" type="button" value="Ver tabla" onclick="generarTabla()">
+    <select id="select" onchange="select()">
+        <option value="todos" selected></option>
+        <option value="todos">Todos</option>
+        <option value="autos">Autos</option>
+        <option value="aviones">Aviones</option>
+      </select>
+    <div id="contenedor">   
+            <table>
+                <thead>
+                    <tr>
+                        <th><input class="button" type="button" value="Id" onclick="ordenarId()"></th>
+                        <th><input class="button" type="button" value="Nombre" onclick="ordenarNombre()"></th>
+                        <th><input class="button" type="button" value="Vel. Máx." onclick="ordenarVelMax()"></th>
+                        <th><input class="button" type="button" value="Cant. Pue." onclick="ordenarCantPue()"></th>
+                        <th><input class="button" type="button" value="Cant. Turb." onclick="ordenarCantTurb()"></th>
+                        <th><input class="button" type="button" value="Alt. Máx." onclick="ordenarAltMax()"></th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+
+                </tbody>
+            </table>
+    </div>
+</body>
+</html>
