@@ -12,7 +12,7 @@ h1{
 
 input.cargar {
     background-color: #dde0ea;
-    color: rgb(43, 82, 160);
+    color: #2b52a0;
     margin: 10px 30px;
     padding: 8px 26px;
     border: none;
@@ -23,12 +23,12 @@ input.cargar {
 }
 
 input.cargar:hover {
-    background-color: rgb(165, 174, 205);
+    background-color: #a5aecd;
 }
 
 select {
     background-color: #eeeff3;
-    color: rgb(43, 82, 160);
+    color: #2b52a0;
     margin: 10px 30px;
     padding: 8px 26px;
     border: none;
@@ -46,17 +46,12 @@ div#contenedor{
     margin: 10px 30px;
 }
 
+
 table {
     width: 60%;
     text-align: center;
     border-collapse: collapse;    
 }
-
-/* th{
-    width: 96%;
-    padding: 8px;
-    font-size: 12px;
-} */
 
 td {
     padding: 8px;
@@ -65,6 +60,7 @@ td {
     color: #669;
     border: 4px solid #fff; 
     font-size: 12px;
+    cursor: pointer;
 }
 
 tr:hover td {
@@ -88,3 +84,42 @@ input.button {
 input.button:hover {
     background-color: #a1b1e6;
 }
+
+form{
+	width:55%;
+	padding:16px;
+	border-radius:4px;
+	background-color:#dde0ea;
+}
+
+form label{
+	font-weight: 500;
+    padding: 5px;
+    font-size: 14px;
+}
+
+form input[type="text"],
+form input[type="number"]{
+	width:100px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+
+form input[type="button"]{
+	width:32%;
+	padding:8px 16px;
+	margin-top:10px;
+	border-radius:4px;
+	border: none;
+	color:#fff;
+	background-color:#2b52a0;
+} 
+
+form input.botones[type="button"]{
+	display: inline-block;
+} 
+
