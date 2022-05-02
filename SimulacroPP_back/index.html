@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script type="text/javascript" src="./js/script.js"></script> -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Practica</title>
+</head>
+<body id="body">
+    <h2>Form Datos</h2>
+    <!-- <input class="cargar" type="button" value="Ver tabla" onclick="generarTabla()"> -->
+    <label>Filtrar por: </label>
+    <select id="select">
+        <option value="todos" selected>Todos</option>
+        <option value="clientes">Clientes</option>
+        <option value="empleados">Empleados</option>
+    </select>
+    <br>
+    <label>Valor promedio IDs: </label>
+    <input type="text" id="promId">
+    <input type="button" class="botones" value="Calcular">
+    <br>
+    <input type="radio" value="cId"><label >ID</label>
+    <input type="radio" value="cApellido"><label >Apellido</label>
+    <input type="radio" value="cNombre"><label >Nombre</label>
+    <input type="radio" value="cEdad"><label >Edad</label>
+    <input type="radio" value="cSexo"><label >Sexo</label>
+    <input type="radio" value="cCuil"><label >Cuil</label>
+    <input type="radio" value="cSueldo"><label >Sueldo</label>
+
+    <div id="contenedor">   
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th><input class="button" type="button" id="oId" value="Id"></th>
+                        <th><input class="button" type="button" id="oApellido" value="Apellido"></th>
+                        <th><input class="button" type="button" id="oNombre" value="Nombre"></th>
+                        <th><input class="button" type="button" id="oEdad" value="Edad"></th>
+                        <th><input class="button" type="button" id="oSexo" value="Sexo"></th>
+                        <th><input class="button" type="button" id="oCuil" value="Cuil"></th>
+                        <th><input class="button" type="button" id="oSueldo" value="Sueldo"></th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    
+                </tbody>
+            </table>
+    </div>
+    <input type="button" class="botones" value="Agregar">
+
+    <div id="contenedor">
+        <form>
+            <h2>Form Modificación/Eliminación</h2>
+            <label>ID:</label><input type="number" id="id"><br>
+            <label>Apellido:</label><input type="text" id="apellido"><br>
+            <label>Nombre:</label><input type="text" id="nombre"><br>
+            <label>Tipo:</label>
+            <select id="select">
+                <option value="autos" selected>Cliente</option>
+                <option value="aviones">Empleado</option>
+            </select><br>
+            <label>Edad:</label><input type="number" id="edad"><br>            
+            <label>Sexo:</label><input type="number" id="sexo"><br>            
+            <label>Cuil:</label><input type="number" id="cuil"><br>            
+            <label>Sueldo</label><input type="number" id="sueldo"><br>            
+            <input type="button" class="botones" value="Agregar">
+            <input type="button" class="botones" value="Modificar">
+            <input type="button" class="botones" value="Eliminar">
+            <input type="button" class="botones" value="Cancelar">
+        </form>
+    </div>
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
+<!-- <script type="text/javascript" src="./js/script.js"></script> -->
