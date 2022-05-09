@@ -142,9 +142,6 @@ function limpiarTabla() {
 // -----------------------------------------
 // GENERAR TABLA
 // -----------------------------------------
-let body = document.getElementById('body');
-body.addEventListener('load', generarTabla());
-
 function generarTabla() {
     let selectTipo = document.getElementById('select');
     let cuerpoTabla = document.querySelector("#cuerpoTabla");
@@ -185,6 +182,7 @@ function cargarFilas(persona){
 // -----------------------------------------
 // CONFIGURACION INICIAL
 // -----------------------------------------
+let body = document.getElementById('body');
 body.addEventListener('load', configInit());
 
 function configInit(){
@@ -197,6 +195,7 @@ function configInit(){
     document.getElementById('cCuil').checked = true;
     document.getElementById('cSueldo').checked = true;
     document.getElementById("fId").readOnly = true;
+    generarTabla();
 }
 
 // -----------------------------------------
@@ -245,146 +244,37 @@ function ocultar(e){
 // BOTONES
 // ORDENAMIENTO
 // -----------------------------------------
-// let orderId = document.getElementById('oId');
-// orderId.addEventListener('click', ordenarId);
-// function ordenarId(){
-//     arrPersona.sort( (a, b) => {
-//         if(a.Id){
-//             if (a.Id > b.Id) {
-//                 return 1;
-//             } 
-//             else if (a.Id == b.Id) { 
-//                 return 0;
-//             } 
-//             else {
-//                 return -1;
-//             }
-//         }
-//     });
-//     limpiarTabla();
-//     generarTabla();
-// }
+let orderId = document.getElementById('oId');
+let orderApellido = document.getElementById('oApellido');
+let orderNombre = document.getElementById('oNombre');
+let orderEdad = document.getElementById('oEdad');
+let orderSexo = document.getElementById('oSexo');
+let orderCuil = document.getElementById('oCuil');
+let orderSueldo = document.getElementById('oSueldo');
+let arrayOrder = [orderId,orderApellido,orderNombre,orderEdad,orderSexo,orderCuil,orderSueldo];
 
-// let orderApellido = document.getElementById('oApellido');
-// orderApellido.addEventListener('click', ordenarApellido);
-// function ordenarApellido(){
-//     arrPersona.sort( (a, b) => {
-//         if(a.Apellido){
-//             if (a.Apellido > b.Apellido) {
-//                 return 1;
-//             } 
-//             else if (a.Apellido == b.Apellido) { 
-//                 return 0;
-//             } 
-//             else {
-//                 return -1;
-//             }
-//         }
-//     });
-//     limpiarTabla();
-//     generarTabla();
-// }
-
-
-// let orderNombre = document.getElementById('oNombre');
-// orderNombre.addEventListener('click', ordenarNombre);
-// function ordenarNombre(){
-//     arrPersona.sort( (a, b) => {
-//         if(a.Nombre){
-//             if (a.Nombre > b.Nombre) {
-//                 return 1;
-//             } 
-//             else if (a.Nombre == b.Nombre) { 
-//                 return 0;
-//             } 
-//             else {
-//                 return -1;
-//             }
-//         }
-//     });
-//     limpiarTabla();
-//     generarTabla();
-// }
-
-// let orderEdad = document.getElementById('oEdad');
-// orderEdad.addEventListener('click', ordenarEdad);
-// function ordenarEdad(){
-//     arrPersona.sort( (a, b) => {
-//         if(a.Edad){
-//             if (a.Edad > b.Edad) {
-//                 return 1;
-//             } 
-//             else if (a.Edad == b.Edad) { 
-//                 return 0;
-//             } 
-//             else {
-//                 return -1;
-//             }
-//         }
-//     });
-//     limpiarTabla();
-//     generarTabla();
-// }
-
-// let orderSexo = document.getElementById('oSexo');
-// orderSexo.addEventListener('click', ordenarSexo);
-// function ordenarSexo(){
-//     arrPersona.sort( (a, b) => {
-//         if(a.Sexo){
-//             if (a.Sexo > b.Sexo) {
-//                 return 1;
-//             } 
-//             else if (a.Sexo == b.Sexo) { 
-//                 return 0;
-//             } 
-//             else {
-//                 return -1;
-//             }
-//         }
-//     });
-//     limpiarTabla();
-//     generarTabla();
-// }
-
-// let orderCuil = document.getElementById('oCuil');
-// orderCuil.addEventListener('click', ordenarCuil);
-// function ordenarCuil(){
-//     arrPersona.sort( (a, b) => {
-//         if(a.Cuil){
-//             if (a.Cuil > b.Cuil) {
-//                 return 1;
-//             } 
-//             else if (a.Cuil == b.Cuil) { 
-//                 return 0;
-//             } 
-//             else {
-//                 return -1;
-//             }
-//         }
-//     });
-//     limpiarTabla();
-//     generarTabla();
-// }
-
-// let orderSueldo = document.getElementById('oSueldo');
-// orderSueldo.addEventListener('click', ordenarSueldo);
-// function ordenarSueldo(){
-//     arrPersona.sort( (a, b) => {
-//         if(a.Sueldo){
-//             if (a.Sueldo > b.Sueldo) {
-//                 return 1;
-//             } 
-//             else if (a.Sueldo == b.Sueldo) { 
-//                 return 0;
-//             } 
-//             else {
-//                 return -1;
-//             }
-//         }
-//     });
-//     limpiarTabla();
-//     generarTabla();
-// }
+for(let i=0;i<arrayOrder.length;i++){
+    arrayOrder[i].textContent = i;
+    arrayOrder[i].addEventListener('click', function(){
+        arrPersona.sort( (a, b) => {
+            let paramA = [a.Id,a.Apellido,a.Nombre,a.Edad,a.Sexo,a.Cuil,a.Sueldo];
+            let paramB = [b.Id,b.Apellido,b.Nombre,b.Edad,b.Sexo,b.Cuil,b.Sueldo];
+            if(paramA[i]){
+                if (paramA[i] > paramB[i]) {
+                    return 1;
+                } 
+                else if (paramA[i] == paramB[i]) { 
+                    return 0;
+                } 
+                else {
+                    return -1;
+                }
+            }
+        });
+        limpiarTabla();
+        generarTabla();
+    });
+}
 
 // -----------------------------------------
 // FILTRADOS
@@ -492,6 +382,9 @@ function insertarNuevo() {
 // FORMULARIO
 // ALTA PERSONA
 // -----------------------------------------
+let altas = document.getElementById('alta');
+altas.addEventListener('click', agregarPersona);
+
 function agregarPersona(){
     let id = Math.round(Math.random() * (0 + 10001));
     while(existeId(id)){
@@ -499,26 +392,37 @@ function agregarPersona(){
     }
     let apellido = document.getElementById("fApellido").value;
     let nombre = document.getElementById("fNombre").value;
-    let edad = parseInt(document.getElementById("fEdad").value);
-    let sexo = document.getElementById("fSexo").value;
-    let cuil = parseInt(document.getElementById("fCuil").value);
-    let sueldo = parseInt(document.getElementById("fSueldo").value);
 
-    if(id>0 && nombre!="" && apellido!=""){
-        if(document.getElementById("fSelect").value == "cliente"){
-            if(edad>0 && sexo!=""){
-                arrPersona.push(new Cliente(id,nombre,apellido,edad,sexo));
+    if(document.getElementById("fId").value==""){
+        if(id>0 && nombre!="" && apellido!=""){
+            let newAlta;
+            if(document.getElementById("fSelect").value == "cliente"){
+                let edad = parseInt(document.getElementById("fInput1").value);
+                let sexo = document.getElementById("fInput2").value;
+                if(edad>0 && sexo!=""){  
+                    newAlta = new Cliente(id,nombre,apellido,edad,sexo);
+                    arrPersona.push(newAlta);
+                }
             }
+            else{
+                let cuil = parseInt(document.getElementById("fInput1").value);
+                let sueldo = parseInt(document.getElementById("fInput2").value);
+                if(cuil>0 && sueldo>0){
+                    newAlta = new Empleado(id,nombre,apellido,cuil,sueldo);
+                    arrPersona.push(newAlta);
+                }
+            }
+            insertarNuevo();
+            console.log(newAlta.toString());
         }
         else{
-            if(cuil>0 && sueldo>0){
-                arrPersona.push(new Empleado(id,nombre,apellido,cuil,sueldo));
-            }
+            alert("Completar el formulario con datos correctos");
         }
-        insertarNuevo();
+        document.getElementById('form').style.display = "none";
+        limpiarCampos();
     }
     else{
-        alert("Completar el formulario con datos correctos");
+        alert("Registro ya existe");
     }
 }
 
@@ -533,6 +437,7 @@ function existeId(id){
 }
 
 // -----------------------------------------
+// FORMULARIO
 // ELIMINAR PERSONA
 // -----------------------------------------
 let eliminar = document.getElementById('eliminar');
@@ -546,13 +451,19 @@ function deleteRow(){
         if(id == arrPersona[i].Id){
             limpiarTabla();
             arrPersona.splice(i,1);
+            generarTabla();
+            break;
         }
     }
+    document.getElementById('form').style.display = "none";
+    limpiarCampos();
+    limpiarTabla();
     generarTabla();
 }
 
 // -----------------------------------------
-// MODIFICAR PERSONA
+// FORMULARIO
+// CARGAR CAMPOS
 // -----------------------------------------
 function cargarCampos(){
     var tr = event.target.parentNode;
@@ -560,52 +471,92 @@ function cargarCampos(){
     document.getElementById("fId").value = tr.cells[0].innerHTML;
     document.getElementById("fApellido").value = tr.cells[1].innerHTML;
     document.getElementById("fNombre").value = tr.cells[2].innerHTML;
-    document.getElementById("fEdad").value = tr.cells[3].innerHTML;
-    document.getElementById("fSexo").value = tr.cells[4].innerText;
-    document.getElementById("fCuil").value = tr.cells[5].innerHTML;
-    document.getElementById("fSueldo").value = tr.cells[6].innerText;
+
+    if(tr.cells[3].innerHTML!="" && tr.cells[4].innerHTML!=""){
+        document.getElementById("fSelect").value = 'cliente';
+        document.getElementById("fInput1").value = tr.cells[3].innerHTML;
+        document.getElementById("fInput2").value = tr.cells[4].innerText;
+        document.getElementById("label1").innerHTML = 'Edad: ';
+        document.getElementById("label2").innerHTML = 'Sexo: ';
+    }
+    else{
+        document.getElementById("fSelect").value = 'empleado';
+        document.getElementById("fInput1").value = tr.cells[5].innerHTML;
+        document.getElementById("fInput2").value = tr.cells[6].innerText;
+        document.getElementById("label1").innerHTML = 'Cuil: ';
+        document.getElementById("label2").innerHTML = 'Sueldo: ';
+    }
 }
 
-function actualizarPersona(){
+// -----------------------------------------
+// SELECT FORMULARIO
+// -----------------------------------------
+let selector = document.getElementById('fSelect');
+selector.addEventListener('change', selectForm);
+function selectForm() {
+    if(document.getElementById("fSelect").value == 'cliente'){
+        document.getElementById("label1").innerHTML = 'Edad: ';
+        document.getElementById("label2").innerHTML = 'Sexo: ';
+    }
+    else{
+        document.getElementById("label1").innerHTML = 'Cuil: ';
+        document.getElementById("label2").innerHTML = 'Sueldo: ';
+    }
+}
+
+// -----------------------------------------
+// FORMULARIO
+// MODIFICAR PERSONA
+// -----------------------------------------
+let modificar = document.getElementById('modificar');
+modificar.addEventListener('click', modificarCampo);
+
+function modificarCampo(){
     let id = parseInt(document.getElementById("fId").value);
     let apellido = document.getElementById("fApellido").value;
     let nombre = document.getElementById("fNombre").value;
-    let edad = parseInt(document.getElementById("fEdad").value);
-    let sexo = document.getElementById("fSexo").value;
-    let cuil = parseInt(document.getElementById("fCuil").value);
-    let sueldo = parseInt(document.getElementById("fSueldo").value);
 
     for(let i=0;i<arrPersona.length;i++){
-        if(id==arrPersona[i].id){
-            if(id>0 && nombre!="" && edad>0 && sexo!=""){
-                if(document.getElementById('auto').checked){
-                    if(id>0 && nombre!="" && velMax>0 && cantPuer>0){
-                        arrPersona.splice(i,1,new Auto(id,nombre,velMax,cantPuer));
+        if(id==arrPersona[i].Id){
+            if(id>0 && nombre!="" && apellido!=""){
+                if(document.getElementById("fSelect").value == "cliente"){
+                    let edad = parseInt(document.getElementById("fInput1").value);
+                    let sexo = document.getElementById("fInput2").value;
+                    if(edad>0 && sexo!=""){
+                        arrPersona.splice(i,1,new Cliente(id,nombre,apellido,edad,sexo));
+                        break;
                     }
                 }
                 else{
-                    if(id>0 && nombre!="" && velMax>0 && cantTurb>0 && altMax>0){
-                        arrPersona.splice(i,1,new Avion(id,nombre,velMax,cantTurb,altMax));
+                    let cuil = parseInt(document.getElementById("fInput1").value);
+                    let sueldo = parseInt(document.getElementById("fInput2").value);
+                    if(cuil>0 && sueldo>0){
+                        arrPersona.splice(i,1,new Empleado(id,nombre,apellido,cuil,sueldo));
+                        break;
                     }
                 }
             }
+            else{
+                alert("Completar el formulario con datos correctos");
+            }
         }
     }
+    document.getElementById('form').style.display = "none";
+    limpiarCampos();
     limpiarTabla();
     generarTabla();
 }
 
 // -----------------------------------------
+// FORMULARIO
 // LIMPIAR CAMPOS!
 // -----------------------------------------
 function limpiarCampos(){
     document.getElementById("fId").value = "";
     document.getElementById("fApellido").value = "";
     document.getElementById("fNombre").value = "";
-    document.getElementById("fEdad").value = "";
-    document.getElementById("fSexo").value = "";
-    document.getElementById("fCuil").value = "";
-    document.getElementById("fSueldo").value = "";
+    document.getElementById("fInput1").value = "";
+    document.getElementById("fInput2").value = "";
 }
 
 // -----------------------------------------
@@ -620,19 +571,12 @@ function visibilidad(){
     }
     else{
         document.getElementById('form').style.display = "";
-        // if(document.getElementById("tipoSelect").value == 'cliente'){
-        //     document.getElementById('cuil').style.display = "none";
-        //     document.getElementById('sueldo').style.display = "none";
-        // }
-        // else{
-        //     document.getElementById('sexo').style.display = "none";
-        //     document.getElementById('edad').style.display = "none";
-        // }
     }
     limpiarCampos();
 }
 
 // -----------------------------------------
+// FORMULARIO
 // CANCELAR FORM!
 // -----------------------------------------
 let cancel = document.getElementById('cancelar');
@@ -641,158 +585,4 @@ cancel.addEventListener('click', cancelar);
 function cancelar(){
     document.getElementById('form').style.display = "none";
     limpiarCampos();
-}
-
-// -----------------------------------------
-// BOTONES
-// ORDENAMIENTO
-// -----------------------------------------
-let orderId = document.getElementById('oId');
-let orderApellido = document.getElementById('oApellido');
-let orderNombre = document.getElementById('oNombre');
-let orderEdad = document.getElementById('oEdad');
-let orderSexo = document.getElementById('oSexo');
-let orderCuil = document.getElementById('oCuil');
-let orderSueldo = document.getElementById('oSueldo');
-
-
-
-orderId.addEventListener('click', ordenar);
-function ordenar(){
-    arrPersona.sort( (a, b) => {
-        if(a.Id){
-            if (a.Id > b.Id) {
-                return 1;
-            } 
-            else if (a.Id == b.Id) { 
-                return 0;
-            } 
-            else {
-                return -1;
-            }
-        }
-    });
-    limpiarTabla();
-    generarTabla();
-}
-
-
-orderApellido.addEventListener('click', ordenarApellido);
-function ordenarApellido(){
-    arrPersona.sort( (a, b) => {
-        if(a.Apellido){
-            if (a.Apellido > b.Apellido) {
-                return 1;
-            } 
-            else if (a.Apellido == b.Apellido) { 
-                return 0;
-            } 
-            else {
-                return -1;
-            }
-        }
-    });
-    limpiarTabla();
-    generarTabla();
-}
-
-
-
-orderNombre.addEventListener('click', ordenarNombre);
-function ordenarNombre(){
-    arrPersona.sort( (a, b) => {
-        if(a.Nombre){
-            if (a.Nombre > b.Nombre) {
-                return 1;
-            } 
-            else if (a.Nombre == b.Nombre) { 
-                return 0;
-            } 
-            else {
-                return -1;
-            }
-        }
-    });
-    limpiarTabla();
-    generarTabla();
-}
-
-
-orderEdad.addEventListener('click', ordenarEdad);
-function ordenarEdad(){
-    arrPersona.sort( (a, b) => {
-        if(a.Edad){
-            if (a.Edad > b.Edad) {
-                return 1;
-            } 
-            else if (a.Edad == b.Edad) { 
-                return 0;
-            } 
-            else {
-                return -1;
-            }
-        }
-    });
-    limpiarTabla();
-    generarTabla();
-}
-
-
-orderSexo.addEventListener('click', ordenarSexo);
-function ordenarSexo(){
-    arrPersona.sort( (a, b) => {
-        if(a.Sexo){
-            if (a.Sexo > b.Sexo) {
-                return 1;
-            } 
-            else if (a.Sexo == b.Sexo) { 
-                return 0;
-            } 
-            else {
-                return -1;
-            }
-        }
-    });
-    limpiarTabla();
-    generarTabla();
-}
-
-
-orderCuil.addEventListener('click', ordenarCuil);
-function ordenarCuil(){
-    arrPersona.sort( (a, b) => {
-        if(a.Cuil){
-            if (a.Cuil > b.Cuil) {
-                return 1;
-            } 
-            else if (a.Cuil == b.Cuil) { 
-                return 0;
-            } 
-            else {
-                return -1;
-            }
-        }
-    });
-    limpiarTabla();
-    generarTabla();
-}
-
-
-orderSueldo.addEventListener('click', ordenarSueldo);
-function ordenarSueldo(){
-    arrPersona.sort( (a, b) => {
-        if(a.Sueldo){
-            if (a.Sueldo > b.Sueldo) {
-                return 1;
-            } 
-            else if (a.Sueldo == b.Sueldo) { 
-                return 0;
-            } 
-            else {
-                return -1;
-            }
-        }
-    });
-    limpiarTabla();
-    generarTabla();
 }

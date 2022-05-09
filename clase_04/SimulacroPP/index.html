@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script type="text/javascript" src="./js/script.js"></script> -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Practica</title>
+</head>
+<body id="body">
+    <div id="contenedorPadre">
+        <h2>Form Datos</h2>
+        <header>
+            <div class="filtro">
+                <label>Filtrar por: </label>
+                <select id="select">
+                    <option value="todos" selected>Todos</option>
+                    <option value="clientes">Clientes</option>
+                    <option value="empleados">Empleados</option>
+                </select>
+            </div>
+            <div class="promedio">
+                <label>Promedio IDs: </label>
+                <input type="text" id="promId" class="prom">
+                <input type="button" class="botones" id="calcular" value="Calcular">
+            </div>
+        </header>
+
+        <div class="order">
+            <input type="checkbox" id="cId"><label >ID</label>
+            <input type="checkbox" id="cApellido"><label >Apellido</label>
+            <input type="checkbox" id="cNombre"><label >Nombre</label>
+            <input type="checkbox" id="cEdad"><label >Edad</label>
+            <input type="checkbox" id="cSexo"><label >Sexo</label>
+            <input type="checkbox" id="cCuil"><label >Cuil</label>
+            <input type="checkbox" id="cSueldo"><label >Sueldo</label>
+        </div>
+
+        <section id="contenedorTabla">   
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th id="thId"><input class="button" type="button" id="oId" value="Id"></th>
+                        <th id="thApellido"><input class="button" type="button" id="oApellido" value="Apellido"></th>
+                        <th id="thNombre"><input class="button" type="button" id="oNombre" value="Nombre"></th>
+                        <th id="thEdad"><input class="button" type="button" id="oEdad" value="Edad"></th>
+                        <th id="thSexo"><input class="button" type="button" id="oSexo" value="Sexo"></th>
+                        <th id="thCuil"><input class="button" type="button" id="oCuil" value="Cuil"></th>
+                        <th id="thSueldo"><input class="button" type="button" id="oSueldo" value="Sueldo"></th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    
+                </tbody>
+            </table>
+        </section>
+        <input id="agregar" type="button" class="botones" value="Agregar">
+
+        <section id="contenedorForm">
+            <form id="form">
+                <h2>Form AME</h2>
+                <label>ID: <input type="number" id="fId"></label>
+                <label>Apellido: <input type="text" id="fApellido"></label>
+                <label>Nombre: <input type="text" id="fNombre"></label>
+                <label>Tipo: 
+                    <select id="fSelect">
+                        <option value="cliente" selected>Cliente</option>
+                        <option value="empleado">Empleado</option>
+                    </select>
+                </label>
+                <label id="label1">Edad: </label><input type="text" id="fInput1">
+                <label id="label2">Sexo: </label><input type="text" id="fInput2">           
+                <div class="botonera">
+                    <input type="button" class="botones" id="alta" value="Alta">
+                    <input type="button" class="botones" id="modificar" value="Modificar">
+                    <input type="button" class="botones" id="eliminar" value="Eliminar">
+                    <input type="button" class="botones" id="cancelar" value="Cancelar">
+                </div>                
+            </form>
+        </section>
+    </div>    
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>

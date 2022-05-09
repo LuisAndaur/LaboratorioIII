@@ -5,12 +5,19 @@
     padding: 0;
     font-family: "Roboto", "sans serif";
 }
+
+div#contenedorPadre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h2{
     color: #0d2455;
     margin: 10px 30px;
 }
 
-input.cargar {
+/* input.cargar {
     background-color: #dde0ea;
     color: #2b52a0;
     margin: 10px 30px;
@@ -24,17 +31,51 @@ input.cargar {
 
 input.cargar:hover {
     background-color: #a5aecd;
+} */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+}
+
+header div{
+    width: 46%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+input#promId{
+    width: 20%;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #eeeff3;
+    color: #039;
+}
+
+input.botones{
+    width: 25%;
+    background-color: #b9c9fe;
+    color: #039;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 5px 2px;
 }
 
 select {
     background-color: #eeeff3;
     color: #2b52a0;
-    margin: 10px 30px;
-    padding: 8px 26px;
+    padding: 4px;
     border: none;
     border-radius: 4px;
     font-weight: 500;
-    font-size: 14px;
     cursor: pointer;
 }
 
@@ -46,11 +87,31 @@ div#contenedor{
     margin: 10px 30px;
 }
 
+div.order{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    padding: 6px;
+}
+
+div.order input{
+    margin-left: 12px;
+    margin-right: 2px;
+}
+
+section#contenedorTabla{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 table {
-    width: 60%;
+    width: 60%;    
     text-align: center;
-    border-collapse: collapse;    
+    border-collapse: collapse;
+    margin: 10px;   
 }
 
 td {
@@ -85,9 +146,20 @@ input.button:hover {
     background-color: #a1b1e6;
 }
 
+section#contenedorForm{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 form{
-	width:55%;
+	width:30%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
 	padding:16px;
+    margin: 10px;
 	border-radius:4px;
 	background-color:#dde0ea;
 }
@@ -110,8 +182,7 @@ form input[type="number"]{
 }
 
 form input[type="button"]{
-	width:32%;
-	padding:8px 16px;
+	width:24%;
 	margin-top:10px;
 	border-radius:4px;
 	border: none;
@@ -123,3 +194,6 @@ form input.botones[type="button"]{
 	display: inline-block;
 } 
 
+div.botonera{
+	width: 100%;
+}
