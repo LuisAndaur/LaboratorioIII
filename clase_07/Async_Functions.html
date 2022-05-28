@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ejemplos Async Function</title>
+</head>
+<body>
+    <div id="ej1"><br/>Ejemplo1:</div>
+    <div id="ej2"><br/>Ejemplo2:</div>
+    <div id="ej3"><br/>Ejemplo3:</div>
+</body>
+    <script>
+        function insertarTexto(nodo, texto) {
+            let n = document.getElementById(nodo);
+            let p = document.createElement("p");
+            p.appendChild(document.createTextNode(texto));
+            n.appendChild(p);
+        }
+
+        async function ej1() {
+            let p = new Promise((exito, fallo) => {
+                exito("Resultado Exitoso");
+            });
+            resultado = await p; //<<<--- El await extrae el resultado exitoso o hace throws del resultado fallido
+            insertarTexto("ej1", resultado);
+        }
+        ej1();
+
+        async function ej2() {
+            let p = new Promise((exito, fallo) => {
+                fallo("Resultado fallido");
+            });
+            resultado = await p; //<<<--- El await extrae el resultado exitoso o hace throws del resultado fallido
+            insertarTexto("ej2", resultado);
+        }
+        ej2();
+
+        async function ej3() {
+            try {
+                let p = new Promise((exito, fallo) => {
+                    fallo("Resultado fallido");
+                });
+                resultado = await p; //<<<--- El await extrae el resultado exitoso o hace throws del resultado fallido
+                insertarTexto("ej3", "Dentro del Try:" + resultado);
+            } catch (error) {
+                insertarTexto("ej3", "Dentro del Catch:" + error);
+            }         
+        }
+        ej3();
+
+
+
+        let p = new Promise((exito, fallo) => {
+            let consulta = new XMLHttpRequest();
+            consulta.onreadystatechange=
+
+        });
+
+        
+
+    </script>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

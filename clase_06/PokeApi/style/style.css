@@ -1,0 +1,83 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+    --bg-color: #1e1e1e;
+    --card-bg-color: white;
+    --card-shadow-color: rgba(0, 0, 0, 0.7);
+    --primary-color: #acacac;
+  }
+  
+  html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /*--------------------------------------------------------------
+  # Card
+  --------------------------------------------------------------*/
+  .card {
+    background-color: var(--card-bg-color);
+    width: 326px;
+    border-radius: 16px;
+    box-shadow: 2px 2px 4px var(--card-shadow-color);
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-color);
+  }
+  
+  .card-body-img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+  }
+  
+  .card-body-title {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+  }
+  
+  .card-body-title span {
+    color: var(--primary-color);
+    font-weight: 400;
+  }
+  
+  .card-body-text {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .card-footer-social {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card-footer-social p {
+    letter-spacing: 1px;
+  }
+  

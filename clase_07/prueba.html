@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getPersonasXML(){
+        let x = new XMLHttpRequest();
+        x.onreadystatechange=function(){
+            if(x.readyState==4){
+                // insertarTexto("Status: "+x.status.toString()+" Respuesta: "+this.responseText);
+                console.log("Status: "+x.status.toString()+" Respuesta: "+this.responseText);
+                console.log("Entroo");
+            }
+        }
+        x.open("GET", "https://localhost:5001/personas");
+        x.send();
+    }
+    getPersonasXML();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
